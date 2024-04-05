@@ -1,0 +1,24 @@
+1709115010624	geckodriver	INFO	Listening on 127.0.0.1:65093
+1709115013725	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "65094" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\JULIAN~1.FER\\AppData\\Local\\Temp\\rust_mozprofile8Y0Hgl"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1709115014142	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1709115014260	Marionette	INFO	Listening on port 65101
+WebDriver BiDi listening on ws://127.0.0.1:65094
+Read port: 65101
+1709115014452	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:65094/devtools/browser/2f60d4f6-55f7-4b16-992c-3cdd4063f06b
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:3000."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:3000."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:3000."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:3000."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:3000."
+JavaScript error: resource://gre/actors/SelectChild.sys.mjs, line 273: TypeError: InspectorUtils.setContentState: Argument 1 is not an object.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:3000."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:3000."
+1709115034845	Marionette	INFO	Stopped listening on port 65101
+JavaScript warning: http://localhost:3000/static/js/bundle.js, line 14582: Script terminated by timeout at:
+dispatchContinuousEvent@http://localhost:3000/static/js/bundle.js:14582:30
+
+Dynamically enable window occlusion 1

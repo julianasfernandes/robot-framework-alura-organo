@@ -1,0 +1,966 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-04-05T18:06:23.911381" rpa="false" schemaversion="5">
+<suite id="s1" name="Robot-Alura" source="C:\Users\juliana.fernandes\Desktop\robot-alura">
+<suite id="s1-s1" name="Tests" source="C:\Users\juliana.fernandes\Desktop\robot-alura\tests">
+<suite id="s1-s1-s1" name="Preenchimento Correto" source="C:\Users\juliana.fernandes\Desktop\robot-alura\tests\preenchimento_correto.robot">
+<test id="s1-s1-s1-t1" name="Verificar se ao preencher corretamente o formulário os dados são inseridos corretamente na lista e se um novo card é criado no time escolhido" line="7">
+<kw name="Dado que eu acesse o Organo" owner="setup_teardown" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:26.151135" level="INFO">Opening browser 'firefox' to base url 'http://localhost:3000/'.</msg>
+<arg>url=http://localhost:3000/</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-05T18:06:26.151135" elapsed="6.734146"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:06:26.151135" elapsed="6.734146"/>
+</kw>
+<kw name="Dado que eu preencha os campos do formulário" owner="cadastro">
+<kw name="First Name" owner="FakerLibrary">
+<msg time="2024-04-05T18:06:32.885281" level="INFO">${Nome} = Maria Cecília</msg>
+<var>${Nome}</var>
+<status status="PASS" start="2024-04-05T18:06:32.885281" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:32.885281" level="INFO">Typing text 'Maria Cecília' into text field 'id:form-nome'.</msg>
+<arg>${CAMPO_NOME}</arg>
+<arg>${Nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:06:32.885281" elapsed="0.183191"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2024-04-05T18:06:33.068472" level="INFO">${Cargo} = Produtor fonográfico</msg>
+<var>${Cargo}</var>
+<status status="PASS" start="2024-04-05T18:06:33.068472" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:33.068472" level="INFO">Typing text 'Produtor fonográfico' into text field 'id:form-cargo'.</msg>
+<arg>${CAMPO_CARGO}</arg>
+<arg>${Cargo}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:06:33.068472" elapsed="0.083197"/>
+</kw>
+<kw name="Image Url" owner="FakerLibrary">
+<msg time="2024-04-05T18:06:33.151669" level="INFO">${Imagem} = https://placekitten.com/200/100</msg>
+<var>${Imagem}</var>
+<arg>width=200</arg>
+<arg>height=100</arg>
+<doc>Returns URL to placeholder image
+Example: http://placehold.it/640x480</doc>
+<status status="PASS" start="2024-04-05T18:06:33.151669" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:33.151669" level="INFO">Typing text 'https://placekitten.com/200/100' into text field 'id:form-imagem'.</msg>
+<arg>${CAMPO_IMAGEM}</arg>
+<arg>${Imagem}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:06:33.151669" elapsed="0.066824"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:33.218493" level="INFO">Clicking element 'class:lista-suspensa'.</msg>
+<arg>${CAMPO_TIME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:06:33.218493" elapsed="0.266795"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:33.485288" level="INFO">Clicking element '//option[contains(.,'Programação')]'.</msg>
+<arg>${selecionar_time}[0]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:06:33.485288" elapsed="0.216243"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:06:32.885281" elapsed="0.816250"/>
+</kw>
+<kw name="E clique no botão &quot;Criar Card&quot;" owner="cadastro">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:33.701531" level="INFO">Clicking element 'id:form-botao'.</msg>
+<arg>${BOTAO_CARD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:06:33.701531" elapsed="0.250676"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:06:33.701531" elapsed="0.250676"/>
+</kw>
+<kw name="Então identificar o card no time esperado" owner="cadastro">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:33.990513" level="INFO">Element 'class:colaborador' is displayed.</msg>
+<arg>class:colaborador</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-05T18:06:33.952207" elapsed="0.038306"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:06:33.952207" elapsed="0.038306"/>
+</kw>
+<kw name="Fechar o navegador" owner="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-05T18:06:33.990513" elapsed="3.227414"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:06:33.990513" elapsed="3.227414"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:06:26.151135" elapsed="11.066792"/>
+</test>
+<test id="s1-s1-s1-t2" name="Verificar se é possivel criar mais de um card se preenchermos os campos corretamente" line="12">
+<kw name="Dado que eu acesse o Organo" owner="setup_teardown" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:37.217927" level="INFO">Opening browser 'firefox' to base url 'http://localhost:3000/'.</msg>
+<arg>url=http://localhost:3000/</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-05T18:06:37.217927" elapsed="6.766270"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:06:37.217927" elapsed="6.766270"/>
+</kw>
+<kw name="Dado que eu preencha os campos do formulário" owner="cadastro">
+<kw name="First Name" owner="FakerLibrary">
+<msg time="2024-04-05T18:06:43.984197" level="INFO">${Nome} = Carolina</msg>
+<var>${Nome}</var>
+<status status="PASS" start="2024-04-05T18:06:43.984197" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:43.984197" level="INFO">Typing text 'Carolina' into text field 'id:form-nome'.</msg>
+<arg>${CAMPO_NOME}</arg>
+<arg>${Nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:06:43.984197" elapsed="0.185760"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2024-04-05T18:06:44.169957" level="INFO">${Cargo} = Intérprete de Bíblias</msg>
+<var>${Cargo}</var>
+<status status="PASS" start="2024-04-05T18:06:44.169957" elapsed="0.000997"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:44.171950" level="INFO">Typing text 'Intérprete de Bíblias' into text field 'id:form-cargo'.</msg>
+<arg>${CAMPO_CARGO}</arg>
+<arg>${Cargo}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:06:44.170954" elapsed="0.076972"/>
+</kw>
+<kw name="Image Url" owner="FakerLibrary">
+<msg time="2024-04-05T18:06:44.248954" level="INFO">${Imagem} = https://dummyimage.com/200x100</msg>
+<var>${Imagem}</var>
+<arg>width=200</arg>
+<arg>height=100</arg>
+<doc>Returns URL to placeholder image
+Example: http://placehold.it/640x480</doc>
+<status status="PASS" start="2024-04-05T18:06:44.248954" elapsed="0.000967"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:44.251916" level="INFO">Typing text 'https://dummyimage.com/200x100' into text field 'id:form-imagem'.</msg>
+<arg>${CAMPO_IMAGEM}</arg>
+<arg>${Imagem}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:06:44.249921" elapsed="0.067312"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:44.317233" level="INFO">Clicking element 'class:lista-suspensa'.</msg>
+<arg>${CAMPO_TIME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:06:44.317233" elapsed="0.268603"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:44.585836" level="INFO">Clicking element '//option[contains(.,'Programação')]'.</msg>
+<arg>${selecionar_time}[0]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:06:44.585836" elapsed="0.249487"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:06:43.984197" elapsed="0.851126"/>
+</kw>
+<kw name="E clique no botão &quot;Criar Card&quot;" owner="cadastro">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:44.835323" level="INFO">Clicking element 'id:form-botao'.</msg>
+<arg>${BOTAO_CARD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:06:44.835323" elapsed="0.266253"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:06:44.835323" elapsed="0.266253"/>
+</kw>
+<kw name="Então identificar 3 cards no time esperado" owner="cadastro">
+<for flavor="IN RANGE">
+<iter>
+<kw name="Dado que eu preencha os campos do formulário" owner="cadastro">
+<kw name="First Name" owner="FakerLibrary">
+<msg time="2024-04-05T18:06:45.101576" level="INFO">${Nome} = Murilo</msg>
+<var>${Nome}</var>
+<status status="PASS" start="2024-04-05T18:06:45.101576" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:45.101576" level="INFO">Typing text 'Murilo' into text field 'id:form-nome'.</msg>
+<arg>${CAMPO_NOME}</arg>
+<arg>${Nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:06:45.101576" elapsed="0.015934"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2024-04-05T18:06:45.132517" level="INFO">${Cargo} = Passador</msg>
+<var>${Cargo}</var>
+<status status="PASS" start="2024-04-05T18:06:45.117510" elapsed="0.015717"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:45.134230" level="INFO">Typing text 'Passador' into text field 'id:form-cargo'.</msg>
+<arg>${CAMPO_CARGO}</arg>
+<arg>${Cargo}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:06:45.133227" elapsed="0.017235"/>
+</kw>
+<kw name="Image Url" owner="FakerLibrary">
+<msg time="2024-04-05T18:06:45.150462" level="INFO">${Imagem} = https://placekitten.com/200/100</msg>
+<var>${Imagem}</var>
+<arg>width=200</arg>
+<arg>height=100</arg>
+<doc>Returns URL to placeholder image
+Example: http://placehold.it/640x480</doc>
+<status status="PASS" start="2024-04-05T18:06:45.150462" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:45.150462" level="INFO">Typing text 'https://placekitten.com/200/100' into text field 'id:form-imagem'.</msg>
+<arg>${CAMPO_IMAGEM}</arg>
+<arg>${Imagem}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:06:45.150462" elapsed="0.062437"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:45.212899" level="INFO">Clicking element 'class:lista-suspensa'.</msg>
+<arg>${CAMPO_TIME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:06:45.212899" elapsed="0.237579"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:45.450478" level="INFO">Clicking element '//option[contains(.,'Programação')]'.</msg>
+<arg>${selecionar_time}[0]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:06:45.450478" elapsed="0.217085"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:06:45.101576" elapsed="0.565987"/>
+</kw>
+<kw name="E clique no botão &quot;Criar Card&quot;" owner="cadastro">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:45.668560" level="INFO">Clicking element 'id:form-botao'.</msg>
+<arg>${BOTAO_CARD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:06:45.668560" elapsed="0.222001"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:06:45.667563" elapsed="0.222998"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2024-04-05T18:06:45.101576" elapsed="0.788985"/>
+</iter>
+<iter>
+<kw name="Dado que eu preencha os campos do formulário" owner="cadastro">
+<kw name="First Name" owner="FakerLibrary">
+<msg time="2024-04-05T18:06:45.892558" level="INFO">${Nome} = Eduardo</msg>
+<var>${Nome}</var>
+<status status="PASS" start="2024-04-05T18:06:45.891559" elapsed="0.000999"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:45.892558" level="INFO">Typing text 'Eduardo' into text field 'id:form-nome'.</msg>
+<arg>${CAMPO_NOME}</arg>
+<arg>${Nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:06:45.892558" elapsed="0.022457"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2024-04-05T18:06:45.916556" level="INFO">${Cargo} = Carteiro</msg>
+<var>${Cargo}</var>
+<status status="PASS" start="2024-04-05T18:06:45.916013" elapsed="0.001428"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:45.917441" level="INFO">Typing text 'Carteiro' into text field 'id:form-cargo'.</msg>
+<arg>${CAMPO_CARGO}</arg>
+<arg>${Cargo}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:06:45.917441" elapsed="0.016384"/>
+</kw>
+<kw name="Image Url" owner="FakerLibrary">
+<msg time="2024-04-05T18:06:45.933825" level="INFO">${Imagem} = https://placekitten.com/200/100</msg>
+<var>${Imagem}</var>
+<arg>width=200</arg>
+<arg>height=100</arg>
+<doc>Returns URL to placeholder image
+Example: http://placehold.it/640x480</doc>
+<status status="PASS" start="2024-04-05T18:06:45.933825" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:45.933825" level="INFO">Typing text 'https://placekitten.com/200/100' into text field 'id:form-imagem'.</msg>
+<arg>${CAMPO_IMAGEM}</arg>
+<arg>${Imagem}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:06:45.933825" elapsed="0.054390"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:45.989248" level="INFO">Clicking element 'class:lista-suspensa'.</msg>
+<arg>${CAMPO_TIME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:06:45.988215" elapsed="0.247748"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:46.235963" level="INFO">Clicking element '//option[contains(.,'Programação')]'.</msg>
+<arg>${selecionar_time}[0]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:06:46.235963" elapsed="0.232497"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:06:45.891559" elapsed="0.576901"/>
+</kw>
+<kw name="E clique no botão &quot;Criar Card&quot;" owner="cadastro">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:46.468460" level="INFO">Clicking element 'id:form-botao'.</msg>
+<arg>${BOTAO_CARD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:06:46.468460" elapsed="0.231945"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:06:46.468460" elapsed="0.231945"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2024-04-05T18:06:45.890561" elapsed="0.809844"/>
+</iter>
+<var>${i}</var>
+<value>1</value>
+<value>3</value>
+<status status="PASS" start="2024-04-05T18:06:45.101576" elapsed="1.598829"/>
+</for>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-04-05T18:06:56.700690" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-04-05T18:06:46.700405" elapsed="10.000285"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:06:45.101576" elapsed="11.599114"/>
+</kw>
+<kw name="Fechar o navegador" owner="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-05T18:06:56.700690" elapsed="2.973151"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:06:56.700690" elapsed="2.973151"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:06:37.217927" elapsed="22.455914"/>
+</test>
+<test id="s1-s1-s1-t3" name="Verificar se é possível criar um card para cada time se preenchermos os campos corretamente" line="17">
+<kw name="Dado que eu acesse o Organo" owner="setup_teardown" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:06:59.673841" level="INFO">Opening browser 'firefox' to base url 'http://localhost:3000/'.</msg>
+<arg>url=http://localhost:3000/</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-05T18:06:59.673841" elapsed="6.718132"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:06:59.673841" elapsed="6.718132"/>
+</kw>
+<kw name="Dado que eu preencha os campos do formulário" owner="cadastro">
+<kw name="First Name" owner="FakerLibrary">
+<msg time="2024-04-05T18:07:06.407593" level="INFO">${Nome} = Emanuel</msg>
+<var>${Nome}</var>
+<status status="PASS" start="2024-04-05T18:07:06.391973" elapsed="0.015620"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:06.407593" level="INFO">Typing text 'Emanuel' into text field 'id:form-nome'.</msg>
+<arg>${CAMPO_NOME}</arg>
+<arg>${Nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:06.407593" elapsed="0.101921"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2024-04-05T18:07:06.509514" level="INFO">${Cargo} = Cabo</msg>
+<var>${Cargo}</var>
+<status status="PASS" start="2024-04-05T18:07:06.509514" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:06.509514" level="INFO">Typing text 'Cabo' into text field 'id:form-cargo'.</msg>
+<arg>${CAMPO_CARGO}</arg>
+<arg>${Cargo}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:06.509514" elapsed="0.027630"/>
+</kw>
+<kw name="Image Url" owner="FakerLibrary">
+<msg time="2024-04-05T18:07:06.537144" level="INFO">${Imagem} = https://dummyimage.com/200x100</msg>
+<var>${Imagem}</var>
+<arg>width=200</arg>
+<arg>height=100</arg>
+<doc>Returns URL to placeholder image
+Example: http://placehold.it/640x480</doc>
+<status status="PASS" start="2024-04-05T18:07:06.537144" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:06.537144" level="INFO">Typing text 'https://dummyimage.com/200x100' into text field 'id:form-imagem'.</msg>
+<arg>${CAMPO_IMAGEM}</arg>
+<arg>${Imagem}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:06.537144" elapsed="0.050878"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:06.588022" level="INFO">Clicking element 'class:lista-suspensa'.</msg>
+<arg>${CAMPO_TIME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:06.588022" elapsed="0.266876"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:06.854898" level="INFO">Clicking element '//option[contains(.,'Programação')]'.</msg>
+<arg>${selecionar_time}[0]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:06.854898" elapsed="0.266580"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:07:06.391973" elapsed="0.729505"/>
+</kw>
+<kw name="Então criar card e identificar 1 card em cada time disponível" owner="cadastro">
+<for flavor="IN ENUMERATE">
+<iter>
+<kw name="Dado que eu preencha os campos do formulário" owner="cadastro">
+<kw name="First Name" owner="FakerLibrary">
+<msg time="2024-04-05T18:07:07.138147" level="INFO">${Nome} = Mariana</msg>
+<var>${Nome}</var>
+<status status="PASS" start="2024-04-05T18:07:07.138147" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:07.138147" level="INFO">Typing text 'Mariana' into text field 'id:form-nome'.</msg>
+<arg>${CAMPO_NOME}</arg>
+<arg>${Nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:07.138147" elapsed="0.054870"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2024-04-05T18:07:07.193017" level="INFO">${Cargo} = Tecelão</msg>
+<var>${Cargo}</var>
+<status status="PASS" start="2024-04-05T18:07:07.193017" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:07.193017" level="INFO">Typing text 'Tecelão' into text field 'id:form-cargo'.</msg>
+<arg>${CAMPO_CARGO}</arg>
+<arg>${Cargo}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:07.193017" elapsed="0.031241"/>
+</kw>
+<kw name="Image Url" owner="FakerLibrary">
+<msg time="2024-04-05T18:07:07.224258" level="INFO">${Imagem} = https://picsum.photos/200/100</msg>
+<var>${Imagem}</var>
+<arg>width=200</arg>
+<arg>height=100</arg>
+<doc>Returns URL to placeholder image
+Example: http://placehold.it/640x480</doc>
+<status status="PASS" start="2024-04-05T18:07:07.224258" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:07.224258" level="INFO">Typing text 'https://picsum.photos/200/100' into text field 'id:form-imagem'.</msg>
+<arg>${CAMPO_IMAGEM}</arg>
+<arg>${Imagem}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:07.224258" elapsed="0.047268"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:07.271526" level="INFO">Clicking element 'class:lista-suspensa'.</msg>
+<arg>${CAMPO_TIME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:07.271526" elapsed="0.250803"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:07.522329" level="INFO">Clicking element '//option[contains(.,'Programação')]'.</msg>
+<arg>${selecionar_time}[0]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:07.522329" elapsed="0.219947"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:07:07.138147" elapsed="0.604129"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:07.742276" level="INFO">Clicking element '//option[contains(.,'Programação')]'.</msg>
+<arg>${time}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:07.742276" elapsed="0.220181"/>
+</kw>
+<kw name="E clique no botão &quot;Criar Card&quot;" owner="cadastro">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:07.962457" level="INFO">Clicking element 'id:form-botao'.</msg>
+<arg>${BOTAO_CARD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:07.962457" elapsed="0.259640"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:07:07.962457" elapsed="0.259640"/>
+</kw>
+<var name="${indice}">0</var>
+<var name="${time}">//option[contains(.,'Programação')]</var>
+<status status="PASS" start="2024-04-05T18:07:07.121478" elapsed="1.100619"/>
+</iter>
+<iter>
+<kw name="Dado que eu preencha os campos do formulário" owner="cadastro">
+<kw name="First Name" owner="FakerLibrary">
+<msg time="2024-04-05T18:07:08.222097" level="INFO">${Nome} = André</msg>
+<var>${Nome}</var>
+<status status="PASS" start="2024-04-05T18:07:08.222097" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:08.222097" level="INFO">Typing text 'André' into text field 'id:form-nome'.</msg>
+<arg>${CAMPO_NOME}</arg>
+<arg>${Nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:08.222097" elapsed="0.018117"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2024-04-05T18:07:08.240214" level="INFO">${Cargo} = Vereador</msg>
+<var>${Cargo}</var>
+<status status="PASS" start="2024-04-05T18:07:08.240214" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:08.240214" level="INFO">Typing text 'Vereador' into text field 'id:form-cargo'.</msg>
+<arg>${CAMPO_CARGO}</arg>
+<arg>${Cargo}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:08.240214" elapsed="0.013507"/>
+</kw>
+<kw name="Image Url" owner="FakerLibrary">
+<msg time="2024-04-05T18:07:08.253721" level="INFO">${Imagem} = https://dummyimage.com/200x100</msg>
+<var>${Imagem}</var>
+<arg>width=200</arg>
+<arg>height=100</arg>
+<doc>Returns URL to placeholder image
+Example: http://placehold.it/640x480</doc>
+<status status="PASS" start="2024-04-05T18:07:08.253721" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:08.253721" level="INFO">Typing text 'https://dummyimage.com/200x100' into text field 'id:form-imagem'.</msg>
+<arg>${CAMPO_IMAGEM}</arg>
+<arg>${Imagem}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:08.253721" elapsed="0.046867"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:08.300588" level="INFO">Clicking element 'class:lista-suspensa'.</msg>
+<arg>${CAMPO_TIME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:08.300588" elapsed="0.251080"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:08.551668" level="INFO">Clicking element '//option[contains(.,'Programação')]'.</msg>
+<arg>${selecionar_time}[0]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:08.551668" elapsed="0.226168"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:07:08.222097" elapsed="0.555739"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:08.777836" level="INFO">Clicking element '//option[contains(.,'Front-End')]'.</msg>
+<arg>${time}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:08.777836" elapsed="0.235981"/>
+</kw>
+<kw name="E clique no botão &quot;Criar Card&quot;" owner="cadastro">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:09.013817" level="INFO">Clicking element 'id:form-botao'.</msg>
+<arg>${BOTAO_CARD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:09.013817" elapsed="0.229028"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:07:09.013817" elapsed="0.229028"/>
+</kw>
+<var name="${indice}">1</var>
+<var name="${time}">//option[contains(.,'Front-End')]</var>
+<status status="PASS" start="2024-04-05T18:07:08.222097" elapsed="1.020748"/>
+</iter>
+<iter>
+<kw name="Dado que eu preencha os campos do formulário" owner="cadastro">
+<kw name="First Name" owner="FakerLibrary">
+<msg time="2024-04-05T18:07:09.242845" level="INFO">${Nome} = Marina</msg>
+<var>${Nome}</var>
+<status status="PASS" start="2024-04-05T18:07:09.242845" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:09.242845" level="INFO">Typing text 'Marina' into text field 'id:form-nome'.</msg>
+<arg>${CAMPO_NOME}</arg>
+<arg>${Nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:09.242845" elapsed="0.015661"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2024-04-05T18:07:09.258506" level="INFO">${Cargo} = General</msg>
+<var>${Cargo}</var>
+<status status="PASS" start="2024-04-05T18:07:09.258506" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:09.274094" level="INFO">Typing text 'General' into text field 'id:form-cargo'.</msg>
+<arg>${CAMPO_CARGO}</arg>
+<arg>${Cargo}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:09.258506" elapsed="0.031213"/>
+</kw>
+<kw name="Image Url" owner="FakerLibrary">
+<msg time="2024-04-05T18:07:09.289719" level="INFO">${Imagem} = https://placekitten.com/200/100</msg>
+<var>${Imagem}</var>
+<arg>width=200</arg>
+<arg>height=100</arg>
+<doc>Returns URL to placeholder image
+Example: http://placehold.it/640x480</doc>
+<status status="PASS" start="2024-04-05T18:07:09.289719" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:09.289719" level="INFO">Typing text 'https://placekitten.com/200/100' into text field 'id:form-imagem'.</msg>
+<arg>${CAMPO_IMAGEM}</arg>
+<arg>${Imagem}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:09.289719" elapsed="0.031240"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:09.336579" level="INFO">Clicking element 'class:lista-suspensa'.</msg>
+<arg>${CAMPO_TIME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:09.336579" elapsed="0.235800"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:09.572379" level="INFO">Clicking element '//option[contains(.,'Programação')]'.</msg>
+<arg>${selecionar_time}[0]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:09.572379" elapsed="0.235219"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:07:09.242845" elapsed="0.564753"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:09.807598" level="INFO">Clicking element '//option[contains(.,'Data Science')]'.</msg>
+<arg>${time}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:09.807598" elapsed="0.242240"/>
+</kw>
+<kw name="E clique no botão &quot;Criar Card&quot;" owner="cadastro">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:10.049838" level="INFO">Clicking element 'id:form-botao'.</msg>
+<arg>${BOTAO_CARD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:10.049838" elapsed="0.234796"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:07:10.049838" elapsed="0.234796"/>
+</kw>
+<var name="${indice}">2</var>
+<var name="${time}">//option[contains(.,'Data Science')]</var>
+<status status="PASS" start="2024-04-05T18:07:09.242845" elapsed="1.041789"/>
+</iter>
+<iter>
+<kw name="Dado que eu preencha os campos do formulário" owner="cadastro">
+<kw name="First Name" owner="FakerLibrary">
+<msg time="2024-04-05T18:07:10.284634" level="INFO">${Nome} = Luana</msg>
+<var>${Nome}</var>
+<status status="PASS" start="2024-04-05T18:07:10.284634" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:10.284634" level="INFO">Typing text 'Luana' into text field 'id:form-nome'.</msg>
+<arg>${CAMPO_NOME}</arg>
+<arg>${Nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:10.284634" elapsed="0.015622"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2024-04-05T18:07:10.300256" level="INFO">${Cargo} = Oftalmologista</msg>
+<var>${Cargo}</var>
+<status status="PASS" start="2024-04-05T18:07:10.300256" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:10.300256" level="INFO">Typing text 'Oftalmologista' into text field 'id:form-cargo'.</msg>
+<arg>${CAMPO_CARGO}</arg>
+<arg>${Cargo}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:10.300256" elapsed="0.031269"/>
+</kw>
+<kw name="Image Url" owner="FakerLibrary">
+<msg time="2024-04-05T18:07:10.331525" level="INFO">${Imagem} = https://placekitten.com/200/100</msg>
+<var>${Imagem}</var>
+<arg>width=200</arg>
+<arg>height=100</arg>
+<doc>Returns URL to placeholder image
+Example: http://placehold.it/640x480</doc>
+<status status="PASS" start="2024-04-05T18:07:10.331525" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:10.331525" level="INFO">Typing text 'https://placekitten.com/200/100' into text field 'id:form-imagem'.</msg>
+<arg>${CAMPO_IMAGEM}</arg>
+<arg>${Imagem}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:10.331525" elapsed="0.031647"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:10.363172" level="INFO">Clicking element 'class:lista-suspensa'.</msg>
+<arg>${CAMPO_TIME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:10.363172" elapsed="0.242637"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:10.605809" level="INFO">Clicking element '//option[contains(.,'Programação')]'.</msg>
+<arg>${selecionar_time}[0]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:10.605809" elapsed="0.219624"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:07:10.284634" elapsed="0.540799"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:10.825433" level="INFO">Clicking element '//option[contains(.,'Devops')]'.</msg>
+<arg>${time}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:10.825433" elapsed="0.235871"/>
+</kw>
+<kw name="E clique no botão &quot;Criar Card&quot;" owner="cadastro">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:11.061304" level="INFO">Clicking element 'id:form-botao'.</msg>
+<arg>${BOTAO_CARD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:11.061304" elapsed="0.235087"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:07:11.061304" elapsed="0.235087"/>
+</kw>
+<var name="${indice}">3</var>
+<var name="${time}">//option[contains(.,'Devops')]</var>
+<status status="PASS" start="2024-04-05T18:07:10.284634" elapsed="1.011757"/>
+</iter>
+<iter>
+<kw name="Dado que eu preencha os campos do formulário" owner="cadastro">
+<kw name="First Name" owner="FakerLibrary">
+<msg time="2024-04-05T18:07:11.296391" level="INFO">${Nome} = Yuri</msg>
+<var>${Nome}</var>
+<status status="PASS" start="2024-04-05T18:07:11.296391" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:11.296391" level="INFO">Typing text 'Yuri' into text field 'id:form-nome'.</msg>
+<arg>${CAMPO_NOME}</arg>
+<arg>${Nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:11.296391" elapsed="0.031121"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2024-04-05T18:07:11.327512" level="INFO">${Cargo} = Parteira tradicional</msg>
+<var>${Cargo}</var>
+<status status="PASS" start="2024-04-05T18:07:11.327512" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:11.327512" level="INFO">Typing text 'Parteira tradicional' into text field 'id:form-cargo'.</msg>
+<arg>${CAMPO_CARGO}</arg>
+<arg>${Cargo}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:11.327512" elapsed="0.036660"/>
+</kw>
+<kw name="Image Url" owner="FakerLibrary">
+<msg time="2024-04-05T18:07:11.364172" level="INFO">${Imagem} = https://picsum.photos/200/100</msg>
+<var>${Imagem}</var>
+<arg>width=200</arg>
+<arg>height=100</arg>
+<doc>Returns URL to placeholder image
+Example: http://placehold.it/640x480</doc>
+<status status="PASS" start="2024-04-05T18:07:11.364172" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:11.364172" level="INFO">Typing text 'https://picsum.photos/200/100' into text field 'id:form-imagem'.</msg>
+<arg>${CAMPO_IMAGEM}</arg>
+<arg>${Imagem}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:11.364172" elapsed="0.032232"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:11.396404" level="INFO">Clicking element 'class:lista-suspensa'.</msg>
+<arg>${CAMPO_TIME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:11.396404" elapsed="0.251032"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:11.647436" level="INFO">Clicking element '//option[contains(.,'Programação')]'.</msg>
+<arg>${selecionar_time}[0]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:11.647436" elapsed="0.234941"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:07:11.296391" elapsed="0.585986"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:11.882377" level="INFO">Clicking element '//option[contains(.,'UX e Design')]'.</msg>
+<arg>${time}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:11.882377" elapsed="0.227531"/>
+</kw>
+<kw name="E clique no botão &quot;Criar Card&quot;" owner="cadastro">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:12.109908" level="INFO">Clicking element 'id:form-botao'.</msg>
+<arg>${BOTAO_CARD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:12.109908" elapsed="0.235434"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:07:12.109908" elapsed="0.235434"/>
+</kw>
+<var name="${indice}">4</var>
+<var name="${time}">//option[contains(.,'UX e Design')]</var>
+<status status="PASS" start="2024-04-05T18:07:11.296391" elapsed="1.048951"/>
+</iter>
+<iter>
+<kw name="Dado que eu preencha os campos do formulário" owner="cadastro">
+<kw name="First Name" owner="FakerLibrary">
+<msg time="2024-04-05T18:07:12.347351" level="INFO">${Nome} = Kevin</msg>
+<var>${Nome}</var>
+<status status="PASS" start="2024-04-05T18:07:12.347351" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:12.347351" level="INFO">Typing text 'Kevin' into text field 'id:form-nome'.</msg>
+<arg>${CAMPO_NOME}</arg>
+<arg>${Nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:12.347351" elapsed="0.014010"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2024-04-05T18:07:12.361361" level="INFO">${Cargo} = Conferente de recebimento</msg>
+<var>${Cargo}</var>
+<status status="PASS" start="2024-04-05T18:07:12.361361" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:12.361361" level="INFO">Typing text 'Conferente de recebimento' into text field 'id:form-cargo'.</msg>
+<arg>${CAMPO_CARGO}</arg>
+<arg>${Cargo}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:12.361361" elapsed="0.046870"/>
+</kw>
+<kw name="Image Url" owner="FakerLibrary">
+<msg time="2024-04-05T18:07:12.408231" level="INFO">${Imagem} = https://placekitten.com/200/100</msg>
+<var>${Imagem}</var>
+<arg>width=200</arg>
+<arg>height=100</arg>
+<doc>Returns URL to placeholder image
+Example: http://placehold.it/640x480</doc>
+<status status="PASS" start="2024-04-05T18:07:12.408231" elapsed="0.015622"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:12.423853" level="INFO">Typing text 'https://placekitten.com/200/100' into text field 'id:form-imagem'.</msg>
+<arg>${CAMPO_IMAGEM}</arg>
+<arg>${Imagem}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:12.423853" elapsed="0.031639"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:12.455492" level="INFO">Clicking element 'class:lista-suspensa'.</msg>
+<arg>${CAMPO_TIME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:12.455492" elapsed="0.251185"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:12.706677" level="INFO">Clicking element '//option[contains(.,'Programação')]'.</msg>
+<arg>${selecionar_time}[0]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:12.706677" elapsed="0.229077"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:07:12.347351" elapsed="0.588403"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:12.935754" level="INFO">Clicking element '//option[contains(.,'Mobile')]'.</msg>
+<arg>${time}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:12.935754" elapsed="0.220370"/>
+</kw>
+<kw name="E clique no botão &quot;Criar Card&quot;" owner="cadastro">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:13.156124" level="INFO">Clicking element 'id:form-botao'.</msg>
+<arg>${BOTAO_CARD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:13.156124" elapsed="0.235757"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:07:13.156124" elapsed="0.235757"/>
+</kw>
+<var name="${indice}">5</var>
+<var name="${time}">//option[contains(.,'Mobile')]</var>
+<status status="PASS" start="2024-04-05T18:07:12.345342" elapsed="1.046539"/>
+</iter>
+<iter>
+<kw name="Dado que eu preencha os campos do formulário" owner="cadastro">
+<kw name="First Name" owner="FakerLibrary">
+<msg time="2024-04-05T18:07:13.391881" level="INFO">${Nome} = Matheus</msg>
+<var>${Nome}</var>
+<status status="PASS" start="2024-04-05T18:07:13.391881" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:13.391881" level="INFO">Typing text 'Matheus' into text field 'id:form-nome'.</msg>
+<arg>${CAMPO_NOME}</arg>
+<arg>${Nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:13.391881" elapsed="0.031238"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2024-04-05T18:07:13.423119" level="INFO">${Cargo} = Marceneiro</msg>
+<var>${Cargo}</var>
+<status status="PASS" start="2024-04-05T18:07:13.423119" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:13.423119" level="INFO">Typing text 'Marceneiro' into text field 'id:form-cargo'.</msg>
+<arg>${CAMPO_CARGO}</arg>
+<arg>${Cargo}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:13.423119" elapsed="0.031670"/>
+</kw>
+<kw name="Image Url" owner="FakerLibrary">
+<msg time="2024-04-05T18:07:13.454789" level="INFO">${Imagem} = https://picsum.photos/200/100</msg>
+<var>${Imagem}</var>
+<arg>width=200</arg>
+<arg>height=100</arg>
+<doc>Returns URL to placeholder image
+Example: http://placehold.it/640x480</doc>
+<status status="PASS" start="2024-04-05T18:07:13.454789" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:13.454789" level="INFO">Typing text 'https://picsum.photos/200/100' into text field 'id:form-imagem'.</msg>
+<arg>${CAMPO_IMAGEM}</arg>
+<arg>${Imagem}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:13.454789" elapsed="0.046869"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:13.501658" level="INFO">Clicking element 'class:lista-suspensa'.</msg>
+<arg>${CAMPO_TIME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:13.501658" elapsed="0.251812"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:13.753470" level="INFO">Clicking element '//option[contains(.,'Programação')]'.</msg>
+<arg>${selecionar_time}[0]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:13.753470" elapsed="0.235290"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:07:13.391881" elapsed="0.596879"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:13.988760" level="INFO">Clicking element '//option[contains(.,'Inovação')]'.</msg>
+<arg>${time}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:13.988760" elapsed="0.235448"/>
+</kw>
+<kw name="E clique no botão &quot;Criar Card&quot;" owner="cadastro">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:07:14.224208" level="INFO">Clicking element 'id:form-botao'.</msg>
+<arg>${BOTAO_CARD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:07:14.224208" elapsed="0.235214"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:07:14.224208" elapsed="0.235214"/>
+</kw>
+<var name="${indice}">6</var>
+<var name="${time}">//option[contains(.,'Inovação')]</var>
+<status status="PASS" start="2024-04-05T18:07:13.391881" elapsed="1.067541"/>
+</iter>
+<var>${indice}</var>
+<var>${time}</var>
+<value>@{selecionar_time}</value>
+<status status="PASS" start="2024-04-05T18:07:07.121478" elapsed="7.337944"/>
+</for>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-04-05T18:07:24.459908" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-04-05T18:07:14.459422" elapsed="10.000486"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:07:07.121478" elapsed="17.338430"/>
+</kw>
+<kw name="Fechar o navegador" owner="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-05T18:07:24.461912" elapsed="2.936667"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:07:24.460913" elapsed="2.937666"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:06:59.673841" elapsed="27.724738"/>
+</test>
+<status status="PASS" start="2024-04-05T18:06:24.021903" elapsed="63.376676"/>
+</suite>
+<status status="PASS" start="2024-04-05T18:06:24.013953" elapsed="63.384626"/>
+</suite>
+<status status="PASS" start="2024-04-05T18:06:23.919821" elapsed="63.493242"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Robot-Alura">Robot-Alura</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1" name="Tests">Robot-Alura.Tests</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1-s1" name="Preenchimento Correto">Robot-Alura.Tests.Preenchimento Correto</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
